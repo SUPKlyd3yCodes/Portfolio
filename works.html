@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Klyde's Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <style>
+        #left:hover {
+            background-color: rgb(255, 227, 186);
+        }
+        #right:hover {
+            background-color: rgb(158, 255, 141);
+        }
+        #lastName {
+            left: 55%;
+        }
+        #firstName {
+            left: 38%;
+        }
+    </style>
+</head>
+<body>
+    <div id="mainHome">
+        <img src="Works/WorksCover.png" id="mainCoverImage"/>
+        <div id="firstName" class="name">
+            MY
+        </div>
+        <div id="lastName" class="name">
+            WORKS
+        </div>
+        <img src="Works/WorksMain.png" id="mainImage"/>
+        
+        <div class="container" id="mainContainer">
+            <div id="leftWorksPanel">
+                <img src="Works/Website.png" class="worksImages">
+                <div id="leftWorksName">Websites</div>
+                <div id="leftWorksDescription">
+                    I love creating websites since they play a vital role in relaying information in such a creative way. As such, I created websites for competitions or simply as a passion project. Here are some of my works:<br>
+                    <a href="https://theeconmarketplace.github.io/TheEconMarketplace/">The Econ Marketplace</a><br>
+                    <a href="https://supklyd3ycodes.github.io/Filnesta/">Filnesta</a><br>
+                    <a href="https://supklyd3ycodes.github.io/CrispyCreations/">Crispy Creations</a><br>
+                    <a href="https://supklyd3ycodes.github.io/Design-ated/">Design-ated</a><br>
+                    <a href="https://supklyd3ycodes.github.io/BiYou/">BiYou</a><br>
+                    <a href=""></a><br>
+                </div>
+            </div>
+            <div id="rightWorksPanel">
+                <img src="Works/Game.png" class="worksImages">
+                <div id="rightWorksName">Games</div>
+                <div id="rightWorksDescription">Making games is one of my other passions since it teaches me that I can put anything from my imagination to a virtual world. I usually like games more than websites since they add another dimension of interactivity to it. Here are some of my works:<br>
+                    <a href="https://www.roblox.com/games/5405785883/Anime-Multiverse-Simulator">Anime Multiverse Simulator&lpar;In Progress&rpar;</a><br>
+                    <a href="https://www.roblox.com/games/8362908802/SUPKlyd3ys-Place-Number-5">Mental Degradation&lpar;In Progress&rpar;</a><br>
+                    <a href="https://www.roblox.com/games/9566340664/King-of-Misfit-Alpha">King of Misfit&lpar;Alpha Version&rpar;</a><br>
+                    Blinked&lpar;In Progress In Unity!&rpar;
+                </div>
+            </div>
+        </div>
+        
+        <div id="footer">
+            <div id="footerTitle">
+                Here Are My Socials!
+            </div>
+            <div id="footerIcons">
+                <a href="https://www.facebook.com/klydesteeven.manalang/" class="fa fa-facebook"></a>
+                <a href="https://www.instagram.com/klydemnlng_/" class="fa fa-instagram"></a>
+                <a href="mailto:klydesteevencmanalang12162007@gmail.com?subject=Mail to Klyde" class="fa fa-google"></a>
+            </div>
+        </div>
+    </div>
+    
+    <div id="left" class="side" onclick="leftSideClick()">
+        <span class="sideText symbol">&lt;</span>
+        <span class="sideText sideContent">Academics</span>
+    </div>
+    
+    <div id="right" class="side" onclick="rightSideClick()">
+        <span class="sideText symbol">&gt;</span>
+        <span class="sideText sideContent">About Me</span>
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("mainHome").style.animation = "cardDown 2s cubic-bezier(.58,.77,.33,1.01)";
+            document.getElementById("right").style.animation = "sideCardDown 2s cubic-bezier(.58,.77,.33,1.01)";
+            document.getElementById("left").style.animation = "sideCardDown 2s cubic-bezier(.58,.77,.33,1.01)";
+        });
+        
+        var debounce = true;
+        var mainInfoCard = document.getElementById("mainContainer");
+        function onScroll() {
+            if (document.documentElement.scrollTop > 300 || document.body.scrollTop > 300) {
+                if (debounce == true) {
+                    debounce = false;
+                    mainInfoCard.style.animation = "appear 0.5s";
+                    setTimeout(function() {
+                        mainInfoCard.style.animation = "";
+                        mainInfoCard.style.opacity = 1
+                    }, 450);
+                }
+            } else if (document.documentElement.scrollTop <= 300 || document.body.scrollTop <= 300) {
+                
+                if (debounce == false) {
+                    mainInfoCard.style.animation = "disappear 0.5s";
+                    setTimeout(function() {
+                        mainInfoCard.style.animation = "";
+                        mainInfoCard.style.opacity = 0
+                        debounce = true;
+                    }, 450);
+                }
+            }
+        }
+        
+        window.addEventListener("scroll", onScroll);
+        
+        
+        function rightSideClick() {
+            document.getElementById("right").style.animation = "nextPageSlide 1s cubic-bezier(.58,.77,.33,1.01)";
+            document.getElementById("right").innerHTML = ""
+        }
+        function leftSideClick() {
+            document.getElementById("left").style.animation = "nextPageSlide 1s cubic-bezier(.58,.77,.33,1.01)";
+            document.getElementById("left").innerHTML = ""
+        }
+        
+        let rightPanel = document.getElementById("rightWorksPanel");
+        let leftPanel = document.getElementById("leftWorksPanel");
+        const leftWorksName = document.getElementById("leftWorksName");
+        const rightWorksName = document.getElementById("rightWorksName");
+        const leftWorksDescription = document.getElementById("leftWorksDescription");
+        const rightWorksDescription = document.getElementById("rightWorksDescription");
+        let width = window.innerWidth
+        
+        rightPanel.addEventListener("mouseover", () => {
+            leftPanel.style.width = "20%";
+            rightPanel.style.width = "80%";
+            
+            leftWorksName.style.fontSize = "0%";
+            rightWorksName.style.fontSize = "400%";
+            rightWorksName.style.bottom = "25%";
+            
+            rightWorksDescription.style.fontSize = "150%";
+        });
+        
+        rightPanel.addEventListener("mouseout", () => {
+            leftPanel.style.width = "50%";
+            rightPanel.style.width = "50%";
+            
+            leftWorksName.style.fontSize = "200%";
+            rightWorksName.style.fontSize = "200%";
+            rightWorksName.style.bottom = "0%";
+            
+            rightWorksDescription.style.fontSize = "0%";
+        });
+        
+        leftPanel.addEventListener("mouseover", () => {
+            rightPanel.style.width = "20%";
+            leftPanel.style.width = "80%";
+            
+            leftWorksName.style.fontSize = "400%";
+            leftWorksName.style.bottom = "25%";
+            rightWorksName.style.fontSize = "0%";
+            
+            leftWorksDescription.style.fontSize = "150%";
+        });
+        
+        leftPanel.addEventListener("mouseout", () => {
+            rightPanel.style.width = "50%";
+            leftPanel.style.width = "50%";
+            
+            leftWorksName.style.fontSize = "200%";
+            leftWorksName.style.bottom = "0%";
+            rightWorksName.style.fontSize = "200%";
+            
+            leftWorksDescription.style.fontSize = "0%";
+        });
+        
+        function rightSideClick() {
+            document.getElementById("right").style.animation = "nextPageSlide 1s cubic-bezier(.58,.77,.33,1.01)";
+            document.getElementById("right").innerHTML = ""
+            
+            setTimeout(function() {
+                window.location.href = "home.html"
+            }, 900);
+        }
+        function leftSideClick() {
+            document.getElementById("left").style.animation = "nextPageSlide 1s cubic-bezier(.58,.77,.33,1.01)";
+            document.getElementById("left").innerHTML = ""
+            
+            setTimeout(function() {
+                window.location.href = "academics.html"
+            }, 900);
+        }
+    </script>
+</body>
+</html>

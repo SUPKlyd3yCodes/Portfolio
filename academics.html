@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Klyde's Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <style>
+        #left:hover {
+            background-color: rgb(158, 255, 141);
+        }
+        #right:hover {
+            background-color: rgb(190, 190, 255);
+        }
+        #firstName {
+            font-size: 400%;
+        }
+        #lastName {
+            font-size: 500%;
+        }
+        #mainInfo {
+            left: 31%;
+            top: 36%;
+        }
+        
+        #mainInfoCard {
+            height: 30%;
+        }
+        
+        #mainImage {
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div id="mainHome">
+        
+        <div style="background-color: rgb(196, 185, 169);" id="mainCoverImage"></div>
+        <div id="firstName" class="name">
+            ACADEMICS
+        </div>
+        <div id="lastName" class="name">
+            ACHIEVEMENTS
+        </div>
+        <img src="Academics/CoverImage.jpg" id="mainImage"/>
+        <div id="mainInfo" class="name">
+            &
+        </div>
+        
+        <div id="mainInfoCard">
+            <div id="mainInfoTitle" style="height: 0; top: -20%;">
+                Academics/Extracurriculars:
+            </div>
+            <div class="grid">
+                <div class="gridItem">
+                    <img src="Academics/graduation.jpg" class="itemImage">
+                    <div class="gridText">
+                        <div>
+                            JUNE 13, 2024 | Graduation
+                        </div>
+                        <div>
+                            Service Award <br>
+                            Highest Honor <br>
+                            Principal's Commendation Award in Science
+                        </div>
+                    </div>
+                </div>
+                <div class="gridItem">
+                    <img src="Academics/CodeCup.jpg" class="itemImage">
+                    <div class="gridText">
+                        <div>
+                            MAY 9, 2024 | Code Cup
+                        </div>
+                        <div>
+                            First Place
+                        </div>
+                    </div>
+                </div>
+                <div class="gridItem">
+                    <img src="Academics/SIP.jpg" class="itemImage">
+                    <div class="gridText">
+                        <div>
+                            MAY 9, 2024 | SIP
+                        </div>
+                        <div>
+                            Second Place
+                        </div>
+                    </div>
+                </div>
+                <div class="gridItem">
+                    <img src="Academics/Scrabble.jpg" class="itemImage">
+                    <div class="gridText">
+                        <div>
+                            FEBRUARY 24, 2024 | Scrabble Competition
+                        </div>
+                        <div>
+                            2nd place in Top-5 Among Guest Schools<br>
+                            2nd place in the Under 16 Category
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="gridItem">
+                    <img src="Academics/SpringMun.jpg" class="itemImage">
+                    <div class="gridText">
+                        <div>
+                            FEBRUARY 15-17, 2024 | Model United<br> Nations Spring
+                        </div>
+                        <div>
+                            Honorable Mention Award
+                        </div>
+                    </div>
+                </div>
+                <div class="gridItem">
+                    <img src="Academics/DebateCycle2.jpg" class="itemImage">
+                    <div class="gridText">
+                        <div>
+                            FEBRUARY 3, 2024 | Debate Cycle 2
+                        </div>
+                        <div>
+                            6th Place Reply Speaker<br>
+                            26th Place Speaker
+                        </div>
+                    </div>
+                </div>
+                <div class="gridItem">
+                    <img src="Academics/DebateCycle1.jpg" class="itemImage">
+                    <div class="gridText">
+                        <div>
+                            NOVEMBER 11, 2024 | Debate Cycle 1
+                        </div>
+                        <div>
+                            18th Place Reply Speaker<br>
+                            29th Place Speaker
+                        </div>
+                    </div>
+                </div>
+                <div class="gridItem">
+                    <img src="Academics/Famelab.jpg" class="itemImage">
+                    <div class="gridText">
+                        <div>
+                            OCTOBER 30, 2023 | FameLab
+                        </div>
+                        <div>
+                            Semi-Finalist
+                        </div>
+                    </div>
+                </div>
+                <div class="gridItem">
+                    <img src="Academics/PICE.jpg" class="itemImage">
+                    <div class="gridText">
+                        <div>
+                            OCTOBER 27, 2023 | PICE Competition
+                        </div>
+                        <div>
+                            First Runner-Up
+                        </div>
+                    </div>
+                </div>
+                <div class="gridItem">
+                    <img src="Academics/FallMun.jpg" class="itemImage">
+                    <div class="gridText">
+                        <div>
+                            SEPTEMBER 28-30, 2023 | Model United<br> Nations Fall
+                        </div>
+                        <div>
+                            Honorable Mention
+                        </div>
+                    </div>
+                </div>
+                <div class="gridItem">
+                    <img src="Academics/SSG.jpg" class="itemImage">
+                    <div class="gridText">
+                        <div>
+                            SEPTEMBER 17, 2023 | PISQ Student Government
+                        </div>
+                        <div>
+                            Grade 10 Representative
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="footer">
+            <div id="footerTitle">
+                Here Are My Socials!
+            </div>
+            <div id="footerIcons">
+                <a href="https://www.facebook.com/klydesteeven.manalang/" class="fa fa-facebook"></a>
+                <a href="https://www.instagram.com/klydemnlng_/" class="fa fa-instagram"></a>
+                <a href="mailto:klydesteevencmanalang12162007@gmail.com?subject=Mail to Klyde" class="fa fa-google"></a>
+            </div>
+        </div>
+    </div>
+    
+    <div id="left" class="side" onclick="leftSideClick()">
+        <span class="sideText symbol">&lt;</span>
+        <span class="sideText sideContent">About Me</span>
+    </div>
+    
+    <div id="right" class="side" onclick="rightSideClick()">
+        <span class="sideText symbol">&gt;</span>
+        <span class="sideText sideContent">Works</span>
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("mainHome").style.animation = "cardDown 2s cubic-bezier(.58,.77,.33,1.01)";
+            document.getElementById("right").style.animation = "sideCardDown 2s cubic-bezier(.58,.77,.33,1.01)";
+            document.getElementById("left").style.animation = "sideCardDown 2s cubic-bezier(.58,.77,.33,1.01)";
+        });
+        
+        var debounce = true;
+        var mainInfoCard = document.getElementById("mainInfoCard");
+        function onScroll() {
+            if (document.documentElement.scrollTop > 300 || document.body.scrollTop > 300) {
+                if (debounce == true) {
+                    debounce = false;
+                    mainInfoCard.style.animation = "appear 0.5s";
+                    setTimeout(function() {
+                        mainInfoCard.style.animation = "";
+                        mainInfoCard.style.opacity = 1
+                    }, 450);
+                }
+            } else if (document.documentElement.scrollTop <= 300 || document.body.scrollTop <= 300) {
+                
+                if (debounce == false) {
+                    mainInfoCard.style.animation = "disappear 0.5s";
+                    setTimeout(function() {
+                        mainInfoCard.style.animation = "";
+                        mainInfoCard.style.opacity = 0
+                        debounce = true;
+                    }, 450);
+                }
+            }
+        }
+        
+        window.addEventListener("scroll", onScroll);
+        
+        
+        function rightSideClick() {
+            document.getElementById("right").style.animation = "nextPageSlide 1s cubic-bezier(.58,.77,.33,1.01)";
+            document.getElementById("right").innerHTML = ""
+            
+            setTimeout(function() {
+                window.location.href = "works.html"
+            }, 900);
+        }
+        function leftSideClick() {
+            document.getElementById("left").style.animation = "nextPageSlide 1s cubic-bezier(.58,.77,.33,1.01)";
+            document.getElementById("left").innerHTML = ""
+            
+            setTimeout(function() {
+                window.location.href = "home.html"
+            }, 900);
+        }
+    </script>
+</body>
+</html>

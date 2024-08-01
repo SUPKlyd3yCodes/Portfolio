@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Klyde's Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <style>
+        /*Used for body color*/
+        body {
+            animation: changeColors 30s ease-in-out infinite;
+            overflow: hidden;
+        }
+
+        @keyframes changeColors {
+            0% {
+                background-color: #86764c;
+            }
+            40% {
+                background-color: #99834a;
+            }
+            60% {
+                background-color: #947835;
+            }
+            100% {
+                background-color: #86764c;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!--In the middle -->
+    <div id="spotLight"></div>
+    <div id="index">
+        <div id="button" style="cursor: pointer;" onclick="nextpage()" onmouseover="hover()" onmouseleave="unhover()">Hello There!</div>
+    </div>
+
+
+    <div id="circle1"></div>
+    <div id="circle2"></div>
+    <script>
+        var count = 0;
+        var canFocus = true;
+        var spotlight = document.getElementById('spotLight');
+        function nextpage () {
+            button = document.getElementById('button');
+            if (count == 0) {
+                button.style.animation = "nextText 1s";
+                count++;
+                button.innerHTML = "I'm Klyde!";
+            } else if (count == 1) {
+                button.style.animation = "nextText 1s";
+                count++;
+                button.innerHTML = "Welcome to my Portfolio!";
+            } else {
+                button.style.animation = "nextText 1s";
+                canFocus = false;
+                spotlight.style.animation = "spotLightBig 0.6s";
+                button.style.animation = "lastText 0.6s";
+                setTimeout(function() {
+                    spotlight.style.width = "300vh";
+                    spotlight.style.height = "300vh";
+                    button.innerHTML = "";
+                    window.location.href = "home.html";
+                }, 500);
+            }
+            
+        }
+
+        function hover () {
+            var r = document.querySelector(':root');
+            var computedStyle = getComputedStyle(spotlight);
+            var left = computedStyle.left;
+            var top = computedStyle.top;
+    
+            r.style.setProperty('--indexLeft', left);
+            r.style.setProperty('--indexTop', top);
+            
+            if (canFocus) {
+                document.getElementById('spotLight').style.animation = "hoverSpotLightMove 0.1s";
+            }
+        }
+        function unhover () {
+            if (canFocus) {
+                document.getElementById('spotLight').style.animation = "spotLightMove 10s ease-in-out infinite";
+            }
+        }
+
+    </script>
+</body>
+</html>

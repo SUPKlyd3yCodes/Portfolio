@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Klyde's Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <style>
+        #left:hover {
+            background-color: rgb(190, 190, 255);
+        }
+        #right:hover {
+            background-color: rgb(255, 227, 186);
+        }
+        #mainInfoCard {
+            top: 65%;
+            height: 25%;
+        }
+        #mainImage {
+            border: 0;
+            object-fit: cover;
+            object-position: 30% 40%;
+            left: 55%;
+            opacity: 1;
+        }
+
+        #imgBox {
+            position: absolute;
+            top: 18%;
+            left: 40%;
+            width: 35%;
+            height: 16.75%;
+            border: 3px solid rgb(66, 66, 66);
+            z-index: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="mainHome">
+        <div style="background-color: rgb(160, 179, 173);" id="mainCoverImage"></div>
+        <div id="firstName" class="name">
+            KLYDE
+        </div>
+        <div id="lastName" class="name">
+            MANALANG
+        </div>
+        <div id="imgBox">
+        </div>
+        <img src="mainCard.png" id="mainImage"/>
+        <div id="verticalMainLine"></div>
+        <div id="mainInfo" class="name">
+            Grade 11 <br>Student
+        </div>
+        
+        <div id="mainInfoCard">
+            <div id="mainInfoTitle">
+                Get to know me!
+            </div>
+            <img src="introImage.jpg" class="infoImage">
+            <div class="mainInfoText">
+                Hello, I am Klyde, a 16-year old grade <span style="letter-spacing: -5px;">11</span> <br>
+                student with a big passion in all things <br>
+                computer science. I'm currently studying as a <br>
+                scholar in Swiss International School Qatar.<br>
+                I come from the Philippines and characterize <br>
+                myself as a hard-working, motivated, and <br> 
+                analytical person.<br>
+                
+            </div>
+        </div>
+        
+        <div id="footer">
+            <div id="footerTitle">
+                Here Are My Socials!
+            </div>
+            <div id="footerIcons">
+                <a href="https://www.facebook.com/klydesteeven.manalang/" class="fa fa-facebook"></a>
+                <a href="https://www.instagram.com/klydemnlng_/" class="fa fa-instagram"></a>
+                <a href="mailto:klydesteevencmanalang12162007@gmail.com?subject=Mail to Klyde" class="fa fa-google"></a>
+            </div>
+        </div>
+    </div>
+
+    <div id="left" class="side" onclick="leftSideClick()">
+        <span class="sideText symbol">&lt;</span>
+        <span class="sideText sideContent">Works</span>
+    </div>
+
+    <div id="right" class="side" onclick="rightSideClick()">
+        <span class="sideText symbol">&gt;</span>
+        <span class="sideText sideContent">Academics</span>
+    </div>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("mainHome").style.animation = "cardDown 2s cubic-bezier(.58,.77,.33,1.01)";
+            document.getElementById("right").style.animation = "sideCardDown 2s cubic-bezier(.58,.77,.33,1.01)";
+            document.getElementById("left").style.animation = "sideCardDown 2s cubic-bezier(.58,.77,.33,1.01)";
+        });
+        
+        var debounce = true;
+        var mainInfoCard = document.getElementById("mainInfoCard");
+        function onScroll() {
+            if (document.documentElement.scrollTop > 300 || document.body.scrollTop > 300) {
+                if (debounce == true) {
+                    debounce = false;
+                    mainInfoCard.style.animation = "appear 0.5s";
+                    setTimeout(function() {
+                        mainInfoCard.style.animation = "";
+                        mainInfoCard.style.opacity = 1
+                    }, 450);
+                }
+            } else if (document.documentElement.scrollTop <= 300 || document.body.scrollTop <= 300) {
+            
+                if (debounce == false) {
+                    mainInfoCard.style.animation = "disappear 0.5s";
+                    setTimeout(function() {
+                        mainInfoCard.style.animation = "";
+                        mainInfoCard.style.opacity = 0
+                        debounce = true;
+                    }, 450);
+                }
+            }
+        }
+    
+        window.addEventListener("scroll", onScroll);
+
+
+        function rightSideClick() {
+            document.getElementById("right").style.animation = "nextPageSlide 1s cubic-bezier(.58,.77,.33,1.01)";
+            document.getElementById("right").innerHTML = ""
+            
+            setTimeout(function() {
+                window.location.href = "academics.html"
+            }, 900);
+        }
+        function leftSideClick() {
+            document.getElementById("left").style.animation = "nextPageSlide 1s cubic-bezier(.58,.77,.33,1.01)";
+            document.getElementById("left").innerHTML = ""
+            
+            setTimeout(function() {
+                window.location.href = "works.html"
+            }, 900);
+        }
+</script>
+</body>
+</html>
